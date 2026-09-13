@@ -1,0 +1,112 @@
+.events-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.events-status {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.day-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.day-tab {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.day-tab-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.events-empty {
+  color: var(--color-text-muted);
+}
+
+.event-card {
+  display: flex;
+  gap: 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.event-card-time {
+  flex-shrink: 0;
+  width: 130px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.event-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.event-card-name {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.event-card-type {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  white-space: nowrap;
+}
+
+.event-card-location,
+.event-card-sponsor {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.event-card-description {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .event-card-time {
+    width: auto;
+  }
+}
