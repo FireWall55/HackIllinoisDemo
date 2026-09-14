@@ -1,10 +1,14 @@
 :root {
-  --color-bg: #f7f7f5;
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-note: "Caveat", cursive;
+
+  --color-bg: #eef7f6;
   --color-surface: #ffffff;
-  --color-text: #1c1c1c;
-  --color-text-muted: #5f5f5f;
-  --color-border: #e2e2e2;
-  --color-accent: #2b4c7e;
+  --color-text: #0b2b38;
+  --color-text-muted: #4c6b76;
+  --color-border: rgba(11, 43, 56, 0.14);
+  --color-accent: #0f6e8c;
 }
 
 * {
@@ -13,19 +17,31 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--color-bg);
+  font-family: var(--font-body);
+  background: #0b2b38;
   color: var(--color-text);
-}
-
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
 }
 
 h1,
 h2,
 h3 {
+  font-family: var(--font-display);
   font-weight: 700;
+  margin: 0;
+}
+
+/* Every page wraps itself in .page + a theme-* class (see oceanThemes.css).
+   .page hosts the fixed OceanBackground; .page-content is the readable,
+   width-constrained column that sits on top of it. */
+.page {
+  position: relative;
+  min-height: calc(100vh - 68px);
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
 }

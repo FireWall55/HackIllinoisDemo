@@ -1,10 +1,6 @@
 const BASE_URL = "https://adonix.hackillinois.org";
 
-/**
- * Fetches the full list of public events.
- * The API responds with { events: [...] }, so we unwrap that here
- * so every component that uses this just works with a plain array.
- */
+
 export async function getEvents() {
   const response = await fetch(`${BASE_URL}/event/`);
 
