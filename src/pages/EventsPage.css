@@ -49,6 +49,12 @@
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.25rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.event-card:hover {
+  border-color: var(--color-accent);
 }
 
 .event-card-time {

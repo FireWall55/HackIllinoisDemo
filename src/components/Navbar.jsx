@@ -28,6 +28,9 @@ function Navbar() {
           <NavLink to="/events" onClick={() => setIsOpen(false)} className="navbar-link">
             Events
           </NavLink>
+          <NavLink to="/judges" onClick={() => setIsOpen(false)} className="navbar-link">
+            Judges
+          </NavLink>
         </nav>
       )}
     </header>

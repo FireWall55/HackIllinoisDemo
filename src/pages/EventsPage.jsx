@@ -3,13 +3,16 @@ import { getEvents } from "../services/api.js";
 import { groupEventsByDay } from "../utils/groupEventsByDay.js";
 import DayTabs from "../components/DayTabs.jsx";
 import EventCard from "../components/EventCard.jsx";
+import EventModal from "../components/EventModal.jsx";
 import "./EventsPage.css";
+import "../components/EventModal.css";
 
 function EventsPage() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
     getEvents()
@@ -23,7 +26,7 @@ function EventsPage() {
       });
   }, []);
 
-  //useMemo to lower computational costs
+  // useMemo to lower computational costs
   const days = useMemo(() => groupEventsByDay(events), [events]);
   const selectedDay = days[selectedDayIndex];
 
@@ -50,12 +53,20 @@ function EventsPage() {
       <div className="event-list">
         {selectedDay?.events.length ? (
           selectedDay.events.map((event) => (
-            <EventCard key={event.eventId} event={event} />
+            <EventCard
+              key={event.eventId}
+              event={event}
+              onClick={() => setSelectedEvent(event)}
+            />
           ))
         ) : (
           <p className="events-empty">No events scheduled for this day.</p>
         )}
       </div>
+
+      {selectedEvent && (
+        <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+      )}
     </div>
   );
 }

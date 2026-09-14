@@ -1,10 +1,10 @@
 import { formatTime } from "../utils/formatTime.js";
 
-function EventCard({ event }) {
+function EventCard({ event, onClick }) {
   const location = event.locations?.[0]?.description;
 
   return (
-    <div className="event-card">
+    <div className="event-card" onClick={onClick}>
       <div className="event-card-time">
         {formatTime(event.startTime)} – {formatTime(event.endTime)}
       </div>
