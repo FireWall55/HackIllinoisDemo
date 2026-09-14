@@ -59,7 +59,8 @@
 
 .event-card-time {
   flex-shrink: 0;
-  width: 130px;
+  min-width: 130px;
+  white-space: nowrap;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-accent);
