@@ -31,6 +31,12 @@ function Navbar() {
           <NavLink to="/judges" onClick={() => setIsOpen(false)} className="navbar-link">
             Judges
           </NavLink>
+          <NavLink to="/mentors" onClick={() => setIsOpen(false)} className="navbar-link">
+            Mentors
+          </NavLink>
+          <NavLink to="/shop" onClick={() => setIsOpen(false)} className="navbar-link">
+            Shop
+          </NavLink>
         </nav>
       )}
     </header>

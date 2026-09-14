@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-import { getJudges } from "../services/api.js";
+import { getMentors } from "../services/api.js";
 import ProfileCard from "../components/ProfileCard.jsx";
 import "../components/ProfileCard.css";
 
-function JudgesPage() {
-  const [judges, setJudges] = useState([]);
+function MentorsPage() {
+  const [mentors, setMentors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getJudges()
+    getMentors()
       .then((data) => {
-        setJudges(data);
+        setMentors(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -21,24 +21,24 @@ function JudgesPage() {
   }, []);
 
   if (loading) {
-    return <div className="profiles-status">Loading judges...</div>;
+    return <div className="profiles-status">Loading mentors...</div>;
   }
 
   if (error) {
-    return <div className="profiles-status">Couldn&apos;t load judges: {error}</div>;
+    return <div className="profiles-status">Couldn&apos;t load mentors: {error}</div>;
   }
 
   return (
     <div className="profiles-page">
-      <h1 className="profiles-title">Judges</h1>
+      <h1 className="profiles-title">Mentors</h1>
 
       <div className="profiles-grid">
-        {judges.map((judge) => (
-          <ProfileCard key={judge._id} person={judge} />
+        {mentors.map((mentor) => (
+          <ProfileCard key={mentor._id} person={mentor} />
         ))}
       </div>
     </div>
   );
 }
 
-export default JudgesPage;
+export default MentorsPage;

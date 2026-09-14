@@ -1,0 +1,49 @@
+.profiles-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profiles-status {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.profile-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--color-bg);
+  display: block;
+}
+
+.profile-card-body {
+  padding: 1rem;
+}
+
+.profile-card-name {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.profile-card-description {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}

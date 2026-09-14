@@ -1,0 +1,75 @@
+.shop-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.shop-status {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.shop-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: var(--color-bg);
+  display: block;
+}
+
+.shop-card-body {
+  padding: 1rem;
+}
+
+.shop-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.shop-card-name {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.shop-card-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+}
+
+.shop-card-price {
+  margin: 0.5rem 0 0.25rem;
+  font-weight: 700;
+}
+
+.shop-card-stock {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.shop-card-stock-empty {
+  color: #b3261e;
+}
