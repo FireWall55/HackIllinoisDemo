@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getMentors } from "../services/api.js";
+import OceanBackground from "../components/OceanBackground.jsx";
 import ProfileCard from "../components/ProfileCard.jsx";
 import "../components/ProfileCard.css";
 
@@ -21,21 +22,37 @@ function MentorsPage() {
   }, []);
 
   if (loading) {
-    return <div className="profiles-status">Loading mentors...</div>;
+    return (
+      <div className="page theme-kelp">
+        <OceanBackground variant="kelp" />
+        <div className="page-content">
+          <div className="profiles-status">Loading mentors...</div>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="profiles-status">Couldn&apos;t load mentors: {error}</div>;
+    return (
+      <div className="page theme-kelp">
+        <OceanBackground variant="kelp" />
+        <div className="page-content">
+          <div className="profiles-status">Couldn&apos;t load mentors: {error}</div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="profiles-page">
-      <h1 className="profiles-title">Mentors</h1>
-
-      <div className="profiles-grid">
-        {mentors.map((mentor) => (
-          <ProfileCard key={mentor._id} person={mentor} />
-        ))}
+    <div className="page theme-kelp">
+      <OceanBackground variant="kelp" />
+      <div className="page-content">
+        <h1 className="profiles-title">Mentors</h1>
+        <div className="profiles-grid">
+          {mentors.map((mentor) => (
+            <ProfileCard key={mentor._id} person={mentor} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getShopItems } from "../services/api.js";
+import OceanBackground from "../components/OceanBackground.jsx";
 import ShopItemCard from "../components/ShopItemCard.jsx";
 import "./ShopPage.css";
 
@@ -21,21 +22,37 @@ function ShopPage() {
   }, []);
 
   if (loading) {
-    return <div className="shop-status">Loading shop...</div>;
+    return (
+      <div className="page theme-treasure">
+        <OceanBackground variant="treasure" />
+        <div className="page-content">
+          <div className="shop-status">Loading shop...</div>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="shop-status">Couldn&apos;t load the shop: {error}</div>;
+    return (
+      <div className="page theme-treasure">
+        <OceanBackground variant="treasure" />
+        <div className="page-content">
+          <div className="shop-status">Couldn&apos;t load the shop: {error}</div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="shop-page">
-      <h1 className="shop-title">Shop</h1>
-
-      <div className="shop-grid">
-        {items.map((item) => (
-          <ShopItemCard key={item._id} item={item} />
-        ))}
+    <div className="page theme-treasure">
+      <OceanBackground variant="treasure" />
+      <div className="page-content">
+        <h1 className="shop-title">Shop</h1>
+        <div className="shop-grid">
+          {items.map((item) => (
+            <ShopItemCard key={item._id} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );

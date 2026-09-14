@@ -1,0 +1,72 @@
+.ocean-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ocean-bg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ocean-bg .layer {
+  will-change: transform;
+}
+
+@keyframes ocean-sway {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes ocean-bubble-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-140px);
+    opacity: 0;
+  }
+}
+
+@keyframes ocean-shimmer {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.22;
+  }
+}
+
+.ocean-bg .sway {
+  animation: ocean-sway 10s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.ocean-bg .rise {
+  animation: ocean-bubble-rise 7s ease-in infinite;
+}
+
+.ocean-bg .shimmer {
+  animation: ocean-shimmer 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-bg .sway,
+  .ocean-bg .rise,
+  .ocean-bg .shimmer {
+    animation: none;
+  }
+}

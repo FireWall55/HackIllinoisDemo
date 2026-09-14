@@ -1,0 +1,48 @@
+/* Each theme re-points the shared card/text variables that every component
+   already reads from (see EventCard.css, ProfileCard.css, ShopItemCard.css).
+   That's the whole re-skinning mechanism - no component CSS has to change. */
+
+.theme-surface {
+  --color-bg: transparent;
+  --color-surface: #ffffff;
+  --color-text: #08303f;
+  --color-text-muted: #3c6070;
+  --color-border: rgba(8, 48, 63, 0.14);
+  --color-accent: #0f6e8c;
+}
+
+.theme-reef {
+  --color-bg: transparent;
+  --color-surface: #fff8ec;
+  --color-text: #0c3b3a;
+  --color-text-muted: #4c6d68;
+  --color-border: rgba(12, 59, 58, 0.16);
+  --color-accent: #ff7a59;
+}
+
+.theme-deep {
+  --color-bg: transparent;
+  --color-surface: #103c50;
+  --color-text: #e7f6fa;
+  --color-text-muted: #9dc4d1;
+  --color-border: rgba(79, 209, 197, 0.28);
+  --color-accent: #4fd1c5;
+}
+
+.theme-kelp {
+  --color-bg: transparent;
+  --color-surface: #f1fbf2;
+  --color-text: #123524;
+  --color-text-muted: #4b6b57;
+  --color-border: rgba(18, 53, 36, 0.16);
+  --color-accent: #2e8b57;
+}
+
+.theme-treasure {
+  --color-bg: transparent;
+  --color-surface: #fff6e4;
+  --color-text: #3c2a12;
+  --color-text-muted: #6c5636;
+  --color-border: rgba(60, 42, 18, 0.18);
+  --color-accent: #c9932e;
+}

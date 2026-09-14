@@ -1,17 +1,21 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  position: relative;
+  padding: 1rem 1.75rem;
+  background: #0b2b38;
+  border-bottom: 3px solid #123c4d;
 }
 
 .navbar-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #eaf7f5;
+  letter-spacing: 0.01em;
 }
 
 .navbar-toggle {
@@ -30,7 +34,7 @@
 .navbar-toggle span {
   display: block;
   height: 2px;
-  background: var(--color-text);
+  background: #eaf7f5;
   border-radius: 2px;
 }
 
@@ -41,22 +45,22 @@
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #0f3a4d;
+  border: 1px solid #1c5064;
   border-radius: 8px;
   overflow: hidden;
   min-width: 160px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
 
 .navbar-link {
   padding: 0.75rem 1rem;
   text-decoration: none;
-  color: var(--color-text);
+  color: #eaf7f5;
   font-size: 0.95rem;
 }
 
 .navbar-link:hover {
-  background: var(--color-bg);
+  background: #123c4d;
 }
